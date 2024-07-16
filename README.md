@@ -50,6 +50,7 @@ This repository contains the code used in the manuscript (main code) and a test 
     │   │   │   │   ├── step2_network-from-spatial.R  <--------# Network analyses
     │   │   │   │   ├── step3_prepare_data_GAT.R  <------------# Prepare data for GAT
     │   │   ├── data  <----------------------------------------# Test data
+    │   │   │   ├── P04primary_reg005_HE_aligned.tif<----------# HE image
     │   │   │   ├── coordinatescorrection.csv  <---------------# Coordinate correction due to cell coordinates offset relative to mask/mIF
     │   │   │   ├── masks  <-----------------------------------# ROI mask data with cellular tumor 
     │   │   │   │   ├── P04primary  <--------------------------# Test sample
