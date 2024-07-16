@@ -5,7 +5,8 @@ pacman::p_load(foreach,doParallel,parallel, dplyr, reshape2,stringr,ClusterR, sp
 #BiocManager::install("BiocNeighbors")
 require(BiocNeighbors)
 
-load("/data/dataafterQC_CTIT_phenotyped_20240311.rdata")
+load("step0_output-qc/dataafterQC_CTIT_phenotyped_20240311.rdata")
+if(!dir.exists("step3_output-spat_for_gat")) {dir.create("step3_output-spat_for_gat")}
 
 markers<- c('Olig2','Nestin','CD45', 'CD3e', 'CD68')
 normalize<- TRUE
@@ -77,9 +78,9 @@ for(sam in unique(ss_all_gat$sample)){
     features = allreg %>% dplyr::select(cell.id, size, all_of(markers), phenotype,phenotype2)
     
     
-    write.csv(linksdf1, paste0('output_test/links_1um_',sam,"_",reg, ".csv"), row.names = F)
-    write.csv(linksdf30, paste0('output_test/links_30um_',sam,"_",reg, ".csv"), row.names = F)
-    write.csv(features, paste0('output_test/features_',sam,"_",reg, ".csv"), row.names = F)
+    write.csv(linksdf1, paste0('step3_output-spat_for_gat/links_1um_',sam,"_",reg, ".csv"), row.names = F)
+    write.csv(linksdf30, paste0('step3_output-spat_for_gat/links_30um_',sam,"_",reg, ".csv"), row.names = F)
+    write.csv(features, paste0('step3_output-spat_for_gat/features_',sam,"_",reg, ".csv"), row.names = F)
 
   }
 
