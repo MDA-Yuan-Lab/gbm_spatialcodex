@@ -11,21 +11,21 @@ This repository contains the code used in the manuscript (main code) and a test 
 ### Repository content
 
     .
-    ├── main_code  <-------------------------------------------#  
-    │   ├── python_gat <---------------------------------------#
-    │   │   ├── GAT  <-----------------------------------------# 
-    │   │   │   ├── requirements.txt  <------------------------# 
-    │   │   │   ├── step0_data_preparation.py  <---------------#
-    │   │   │   ├── step1_modelarchitecture.py  <--------------#
-    │   │   │   ├── step2_model-train.py  <--------------------#
-    │   │   │   ├── step3_loadmodel_inference.py  <------------# 
-    │   ├── r <------------------------------------------------# 
-    │   │   ├── step0_qc-phenotyping.R  <----------------------# 
-    │   │   ├── step1_spatial-process.R  <---------------------# 
-    │   │   ├── step2_network-from-spatial.R  <----------------#
-    │   │   ├── step3_prepare_data_GAT.R  <--------------------#
-    │   │   ├── misc <-----------------------------------------#
-    ├── test_code  <-------------------------------------------# 
+    ├── main_code  <-------------------------------------------# Code used in the manuscript 
+    │   ├── python_gat <---------------------------------------# Python code for the graph attention network (GAT)
+    │   │   ├── GAT  <-----------------------------------------# GAT folder
+    │   │   │   ├── requirements.txt  <------------------------# Requirements file
+    │   │   │   ├── step0_data_preparation.py  <---------------# Data preparation for GAT
+    │   │   │   ├── step1_modelarchitecture.py  <--------------# Model architecture
+    │   │   │   ├── step2_model-train.py  <--------------------# Model training
+    │   │   │   ├── step3_loadmodel_inference.py  <------------# Model inference
+    │   ├── r <------------------------------------------------# R code for data processing 
+    │   │   ├── step0_qc-phenotyping.R  <----------------------# QC and phenotyping based on single cell marker expression
+    │   │   ├── step1_spatial-process.R  <---------------------# Spatial modelling
+    │   │   ├── step2_network-from-spatial.R  <----------------# Network analyses
+    │   │   ├── step3_prepare_data_GAT.R  <--------------------# Prepara data for GAT
+    │   │   ├── misc <-----------------------------------------# Misc codes / archive
+    ├── test_code  <-------------------------------------------# test code with data from one ROI (selfcontained)
     │   ├── python_gat <---------------------------------------# 
     │   │   ├── GAT  <-----------------------------------------#
     │   │   │   ├── requirements.txt  <------------------------#
@@ -43,20 +43,20 @@ This repository contains the code used in the manuscript (main code) and a test 
     │   │   │   │   ├── spatial-aware  <-----------------------# 
     │   │   │   │   │   ├── spatialaware_20240401-0025  <------# 
     │   │   │   │   │   │   ├── checkpoint  <------------------# 
-    │   ├── r <------------------------------------------------# 
-    │   │   ├── codes  <---------------------------------------# 
-    │   │   │   ├── processing  <------------------------------# 
-    │   │   │   │   ├── step1_spatial-process.R  <-------------# 
-    │   │   │   │   ├── step2_network-from-spatial.R  <--------# 
-    │   │   │   │   ├── step3_prepare_data_GAT.R  <------------# 
-    │   │   ├── data  <----------------------------------------# 
-    │   │   │   ├── coordinatescorrection.csv  <---------------# 
-    │   │   │   ├── masks  <-----------------------------------# 
-    │   │   │   │   ├── P04primary  <--------------------------# 
-    │   │   │   │   │   ├── P04_primary_reg005.png.txt  <------# 
-    │   │   │   │   │   ├── P04primary_reg005-labels.png <-----# 
-    │   │   ├── step0_output-qc  <-----------------------------# 
-    │   │   │   ├── phenotyped_data_P04_primary_reg05.rdata  <-# 
+    │   ├── r <------------------------------------------------# R code for data processing 
+    │   │   ├── codes  <---------------------------------------# Codes
+    │   │   │   ├── processing  <------------------------------# Processing emulating the processing of the data tailored for test sample
+    │   │   │   │   ├── step1_spatial-process.R  <-------------# Spatial modelling
+    │   │   │   │   ├── step2_network-from-spatial.R  <--------# Network analyses
+    │   │   │   │   ├── step3_prepare_data_GAT.R  <------------# Prepare data for GAT
+    │   │   ├── data  <----------------------------------------# Test data
+    │   │   │   ├── coordinatescorrection.csv  <---------------# Coordinate correction due to cell coordinates offset relative to mask/mIF
+    │   │   │   ├── masks  <-----------------------------------# ROI mask data with cellular tumor 
+    │   │   │   │   ├── P04primary  <--------------------------# Test sample
+    │   │   │   │   │   ├── P04_primary_reg005.png.txt  <------# Mask information
+    │   │   │   │   │   ├── P04primary_reg005-labels.png <-----# Mask (Cellular tumor = 3)
+    │   │   ├── step0_output-qc  <-----------------------------# Data used for processing
+    │   │   │   ├── phenotyped_data_P04_primary_reg05.rdata  <-# Test data already processed for phenotyping. input for step1...
     ├── LICENSE
     └── README.md
 `
