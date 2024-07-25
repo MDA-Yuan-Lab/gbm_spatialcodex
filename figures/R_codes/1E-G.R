@@ -4,7 +4,7 @@ require(ggplot2); require(ggbeeswarm); require(dplyr);require(lme4); require(lme
 col_reg = c('#3DC2C1', '#C23D3E')
 
 # Fig 1E
-df_1e <- read.csv('/Users/spcastillo/Documents/GitHub/gbm_spatiailcodex_yuanlab/Untitled/figures/source_data/fig1E.csv')
+df_1e <- read.csv('/figures/source_data/fig1E.csv')
       # stats
       m= lmer(diversity ~ tHTI + (region|patient) + (1|patient), data = df_1e); anova(m)
       summary(glht(m, mcp("tHTI"="Tukey")), test = adjusted('holm'))
@@ -22,7 +22,7 @@ df_1e <- read.csv('/Users/spcastillo/Documents/GitHub/gbm_spatiailcodex_yuanlab/
             )
 
 # Fig 1F
-df_1f <- read.csv('/Users/spcastillo/Documents/GitHub/gbm_spatiailcodex_yuanlab/Untitled/figures/source_data/fig1F.csv')
+df_1f <- read.csv('/figures/source_data/fig1F.csv')
       
       #stats (example)
       df_1fex = df_1f %>% filter(phenotype=='TCD8')
@@ -44,7 +44,7 @@ df_1f <- read.csv('/Users/spcastillo/Documents/GitHub/gbm_spatiailcodex_yuanlab/
 
 
 # Fig 1G
-df_1g <- read.csv('/Users/spcastillo/Documents/GitHub/gbm_spatiailcodex_yuanlab/Untitled/figures/source_data/fig1G.csv')
+df_1g <- read.csv('/figures/source_data/fig1G.csv')
 
 #stats (example)
 df_1Gex = df_1g %>% filter(phenotype=='TCD8')
