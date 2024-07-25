@@ -36,3 +36,5 @@ df_2c%>%
   facet_wrap(.~phenotype, nrow=1)+
   #stat_compare_means()+
   theme(axis.text = element_text(size=4))
+
+# Reviewed 25072024 - SPC

@@ -1,5 +1,5 @@
 require(ggplot2); require(dplyr); require(tidyr)
-matrix_expression<- read.csv('/Users/spcastillo/Documents/GitHub/gbm_spatiailcodex_yuanlab/Untitled/figures/source_data/fig1D.csv')
+matrix_expression<- read.csv('/figures/source_data/fig1D.csv')
 
 matrix_expression %>%
   select(!X) %>%
