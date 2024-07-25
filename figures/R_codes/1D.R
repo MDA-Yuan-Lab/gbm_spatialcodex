@@ -13,11 +13,11 @@ matrix_expression %>%
                       label = c(0, 1, 2, 3),
                       guide = guide_colourbar(nbin = 1000))+
   scale_y_discrete(limits=rev)+
-#scale_fill_fermenter(direction = 1) +
   labs(x="Marker", y="Phenotype", title="", fill='z-score') +
   theme_bw() + 
   theme(axis.text.x=element_text(size=9, angle=0, vjust=0.3),
                      axis.text.y=element_text(size=9),
                      plot.title=element_text(size=11))
 
+# Reviewed 25072024 - SPC
 
