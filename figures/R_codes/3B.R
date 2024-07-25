@@ -1,22 +1,20 @@
-require(ggplot2)
+require(ggplot2); require(caret)
 
 model= 'Spatial Aware'
 # or 'Spatial Agnostic'
 
 if(model == 'Spatial Aware'){
-data<- read.csv('step3_gat/spatialaware.csv')
+data<- read.csv('/figures/source_data/fig3B_spatialaware.csv')
 data %>%
   filter(!str_extract(cellid, "IWP\\d{1,2}_reg\\d{3}")  %in% c('IWP07_reg008', 'IWP08_reg005', 'IWP09_reg001')) -> data
 colcm<- '#2B388F' 
 }
 
 if(model == 'Spatial Agnostic'){
-  data<- read.csv('step3_gat/spatialagnostic.csv')
+  data<- read.csv('/figures/source_data/fig3B_spatialagnostic.csv')
   data %>%
     filter(!str_extract(cellid, "IWP\\d{1,2}_reg\\d{3}")  %in% c('IWP07_reg008', 'IWP08_reg005', 'IWP09_reg001')) -> data
   colcm<-'#D6DE23'
-  
-  
 }
 
 data %>%
@@ -56,3 +54,6 @@ ggplot(plt_R, aes(Prediction,Reference, fill= Freq*100)) +
   scale_fill_gradient(low="white", high=colcm, limits=c(0, 85)) +
   labs(x = "Predicted",y = "Reference", fill='% Reference', title=paste0(model, ' model on rGBM'))+
   theme_minimal()
+
+# Reviewed 25072024 - SPC
+

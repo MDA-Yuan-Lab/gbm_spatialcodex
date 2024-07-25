@@ -1,4 +1,4 @@
-save(net.tidy.p, file='figures_datasource/fig3E.rdata')
+load('/figures/source_data/fig3E.rdata')
 
 require(ggraph)
 print(ggraph(net.tidy.p, layout = "linear") + 
@@ -11,3 +11,5 @@ print(ggraph(net.tidy.p, layout = "linear") +
         labs(edge_width = "Fold change", edge_color ='pGBM < rGBM') +
         theme_graph()
 )
+
+# Reviewed 25072024 - SPC
