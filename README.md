@@ -11,6 +11,9 @@ This repository contains the code used in the manuscript (main code) and a test 
 ### Repository content
 
     .
+    ├── figures  <---------------------------------------------# figures data source and code 
+    │   ├── R_codes <------------------------------------------# R codes to reproduce the plots in the main text
+    │   ├── source_data <--------------------------------------# Data sources used by T_codes
     ├── main_code  <-------------------------------------------# Code used in the manuscript 
     │   ├── python_gat <---------------------------------------# Python code for the graph attention network (GAT)
     │   │   ├── GAT  <-----------------------------------------# GAT subdir
